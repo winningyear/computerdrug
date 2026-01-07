@@ -25,6 +25,7 @@ jobs:
 
           cat <<EOF > $FILE
           ---
+          layout: post
           title: "${TITLE}"
           date: ${DATE}
           ---
