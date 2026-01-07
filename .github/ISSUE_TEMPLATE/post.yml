@@ -1,0 +1,20 @@
+name: New Post
+description: 새 글 작성
+title: "[POST] "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 제목
+      placeholder: 글 제목
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: 내용 (Markdown)
+      description: 여기에 글을 씀
+      render: markdown
+    validations:
+      required: true
