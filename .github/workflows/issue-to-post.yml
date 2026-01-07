@@ -18,12 +18,14 @@ jobs:
           TITLE="${{ github.event.issue.title }}"
           BODY="${{ github.event.issue.body }}"
           DATE=$(date +'%Y-%m-%d')
-          SLUG=$(echo "$TITLE" | sed 's/^\[POST\] *//' | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+
+          # 안전한 slug: 이슈 번호 사용 (절대 안 깨짐)
+          SLUG="issue-${{ github.event.issue.number }}"
 
           mkdir -p _posts
           FILE="_posts/${DATE}-${SLUG}.md"
 
-          cat <<EOF > $FILE
+          cat <<EOF > "$FILE"
           ---
           layout: post
           title: "${TITLE}"
@@ -38,5 +40,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add _posts
-          git commit -m "Add post from issue"
+          git commit -m "Add post from issue #${{ github.event.issue.number }}"
           git push
