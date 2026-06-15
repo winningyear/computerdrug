@@ -1,0 +1,14 @@
+/* rouge syntax highlight — soft light theme, paired with lab-note palette */
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #8A8A7E; font-style: italic; } /* comment */
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr { color: #0E7C7B; font-weight: 600; } /* keyword */
+.highlight .kt { color: #B0560F; } /* type */
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss { color: #2E7D32; } /* string */
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #9A3B91; } /* number */
+.highlight .nb, .highlight .bp { color: #B0560F; } /* builtin */
+.highlight .nf, .highlight .nd { color: #1565C0; } /* function / decorator */
+.highlight .nc, .highlight .nn { color: #1565C0; font-weight: 600; } /* class / namespace */
+.highlight .o, .highlight .ow { color: #C0392B; } /* operator */
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #1A1A17; } /* variable */
+.highlight .err { color: #C0392B; }
+.highlight .gd { color: #C0392B; background: #FBEAEA; }
+.highlight .gi { color: #2E7D32; background: #EAF6EC; }

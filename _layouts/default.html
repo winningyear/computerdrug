@@ -1,10 +1,49 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    {{ content }}
-  </body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <!-- benzene ring 모티프 -->
+        <svg width="22" height="24" viewBox="0 0 22 24" fill="none" aria-hidden="true">
+          <path d="M11 1.5 20 6.7v10.6L11 22.5 2 17.3V6.7z" stroke="#0E7C7B" stroke-width="1.6" fill="none"/>
+          <circle cx="11" cy="12" r="4.2" stroke="#0E7C7B" stroke-width="1.3" fill="none"/>
+        </svg>
+        <span>{{ site.title }}</span>
+        <span class="tag">{{ site.tagline }}</span>
+      </a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}">notes</a>
+        <a href="{{ '/tags/' | relative_url }}">tags</a>
+        <a href="{{ '/search/' | relative_url }}">search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© {{ site.time | date: "%Y" }} {{ site.author }}</span>
+      <span>built with jekyll · github pages</span>
+    </div>
+  </footer>
+</body>
 </html>

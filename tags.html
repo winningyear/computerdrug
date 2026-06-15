@@ -1,0 +1,28 @@
+---
+layout: default
+title: tags
+permalink: /tags/
+---
+<h1 class="page-title">tags</h1>
+<p class="page-sub">주제별로 모아보기</p>
+
+{% assign tags = site.tags | sort %}
+<div style="margin-bottom:34px">
+  {% for tag in tags %}
+  <a class="chip" href="#{{ tag[0] }}">{{ tag[0] }} <span style="opacity:.6">{{ tag[1].size }}</span></a>
+  {% endfor %}
+</div>
+
+{% for tag in tags %}
+<h2 id="{{ tag[0] }}" style="font-family:'IBM Plex Mono',monospace;font-size:18px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:34px 0 4px">#{{ tag[0] }}</h2>
+<ul class="postlist">
+  {% for post in tag[1] %}
+  <li>
+    <a class="post-row" href="{{ post.url | relative_url }}">
+      <span class="meta">{{ post.date | date: "%Y.%m.%d" }}</span>
+      <span class="title">{{ post.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}

@@ -1,0 +1,28 @@
+---
+layout: default
+title: search
+permalink: /search/
+---
+<h1 class="page-title">search</h1>
+<p class="page-sub">제목 · 본문 · 태그 전체에서 키워드 검색</p>
+
+<input type="text" id="search-input" class="search-box" placeholder="예: rdkit, docking, gromacs, SMILES…" autofocus>
+<p class="search-hint">입력하면 실시간으로 걸러져. 공백으로 여러 단어 가능.</p>
+<ul id="search-results"></ul>
+
+<script src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '{{ "/search.json" | relative_url }}',
+    searchResultTemplate:
+      '<li><a class="post-row" href="{url}">' +
+      '<span class="meta">{date}</span>' +
+      '<span><span class="title">{title}</span>' +
+      '<span class="excerpt">{tags}</span></span></a></li>',
+    noResultsText: '<li style="font-family:IBM Plex Mono,monospace;color:#5A5A52;padding:14px 0">결과 없음.</li>',
+    limit: 20,
+    fuzzy: false
+  });
+</script>

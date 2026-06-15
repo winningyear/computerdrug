@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h1 class="page-title">lab notes</h1>
+<p class="page-sub">{{ site.posts.size }} entries · 매일 공부한 거 기록</p>
+
+<ul class="postlist">
+  {% for post in site.posts %}
+  <li>
+    <a class="post-row" href="{{ post.url | relative_url }}">
+      <span class="meta">{{ post.date | date: "%Y.%m.%d" }}</span>
+      <span>
+        <span class="title">{{ post.title }}</span>
+        {% if post.excerpt %}<span class="excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</span>{% endif %}
+        {% if post.tags.size > 0 %}<span class="tags">{% for t in post.tags %}<span class="chip">{{ t }}</span>{% endfor %}</span>{% endif %}
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

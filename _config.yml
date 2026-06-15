@@ -1,3 +1,39 @@
-title: computerdurg
+title: computerdrug
+tagline: computational drug design — daily lab notes
+description: 매일 공부한 거 기록하는 랩노트. docking · MD · QSAR · cheminformatics.
+author: winningyear
+
+# GitHub Pages에서 프로젝트 페이지로 배포될 경우 아래 두 줄을 맞춰줘.
+# 예) https://winningyear.github.io/computerdrug  ->  baseurl: "/computerdrug"
+# 유저/조직 페이지(winningyear.github.io)면 baseurl 은 "" 로 비워둬.
+url: ""
+baseurl: "/computerdrug"
+
+# 글 URL 형태: /2026/06/16/제목/
+permalink: /:year/:month/:day/:title/
+
+# 마크다운 / 코드 하이라이팅 (GitHub Pages 기본 지원)
 markdown: kramdown
-theme: minima
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+# 목록에 보여줄 글 개수
+paginate: 10
+
+# 빌드에서 제외
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# 기본값: _posts 안의 글은 자동으로 post 레이아웃 사용
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
