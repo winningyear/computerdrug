@@ -22,7 +22,7 @@ kramdown:
 
 # 목록에 보여줄 글 개수
 paginate: 10
-
+future: true
 # 빌드에서 제외
 exclude:
   - README.md
